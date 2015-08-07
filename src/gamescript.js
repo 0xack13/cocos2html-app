@@ -14,7 +14,9 @@ var game = cc.Layer.extend({
     this._super();
     backgroundLayer = new cc.LayerColor(cc.color(0,60,200,80),320, 480);
     this.addChild(backgroundLayer);
-    var target = cc.Sprite.create("assets/target.png");
+    var gradient = cc.LayerGradient.create(cc.color(0,0,0,255), cc.color(0x46,0x82,0xB4,255));
+    this.addChild(gradient);
+      var target = cc.Sprite.create("assets/target.png");
     backgroundLayer.addChild(target,0);
     target.setPosition(10,240);
     setTimeout(function(){
