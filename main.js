@@ -1,13 +1,7 @@
 cc.game.onStart = function(){
-    cc.view.setDesignResolutionSize(320, 480, cc.ResolutionPolicy.SHOW_ALL);
+  cc.view.setDesignResolutionSize(320, 480, cc.ResolutionPolicy.SHOW_ALL);
+  cc.LoaderScene.preload(gameResources, function () {
     cc.director.runScene(new gameScene());
+  }, this);
 };
-
-var gameScene = cc.Scene.extend({
-  onEnter:function () {
-    this._super();
-    console.log("my awesome game starts here");
-  }
-});
-
 cc.game.run();
